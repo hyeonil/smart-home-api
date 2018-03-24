@@ -1,14 +1,14 @@
 package kr.pe.nuti.home.api.core.util;
 
 /**
- * Boolean 관련 Util
+ * Utility Class for Boolean
  *
  * @since 1.0.0
  */
 public final class BooleanUtil {
 
   private BooleanUtil() {
-
+    throw new IllegalAccessError("illegal access");
   }
 
   /**
