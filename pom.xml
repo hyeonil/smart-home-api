@@ -18,7 +18,7 @@
 
     <version.lombok>1.16.18</version.lombok>
 
-    <version.java>1.9</version.java>
+    <version.java>1.8</version.java>
 
     <version.org.apache.httpcomponents>4.5.1</version.org.apache.httpcomponents>
 
