@@ -8,11 +8,13 @@ import kr.pe.nuti.home.api.repository.todo.TodoItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.lang.NonNull;
+import org.springframework.transaction.annotation.Transactional;
 
 public class TodoService {
 
   private TodoItemRepository todoItemRepository;
 
+  @Transactional
   public TodoItem changeState(@NonNull TodoItem todo, @NonNull TodoState state) throws IllegalStateChangeException {
     TodoItem savedItem = todoItemRepository.findById(todo.getIdx())
         .orElseThrow(ResourceNotFoundException::new);
