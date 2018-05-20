@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Required;
 import org.springframework.lang.NonNull;
 import org.springframework.transaction.annotation.Transactional;
 
+import static kr.pe.nuti.home.api.core.util.BooleanUtil.not;
+
 public class TodoService {
 
   private TodoItemRepository todoItemRepository;
@@ -20,7 +22,7 @@ public class TodoService {
         .orElseThrow(ResourceNotFoundException::new);
 
     final boolean possibleToChangeState = TodoState.isPossibleToChangeState(savedItem.getState(), state);
-    if (!possibleToChangeState) {
+    if (not(possibleToChangeState)) {
       throw new IllegalStateChangeException();
     }
 
