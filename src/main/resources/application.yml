@@ -1,3 +1,26 @@
+debug: true
 spring:
   main:
     banner-mode: "off"
+  datasource:
+    url: jdbc:hsqldb:file:~/hsql/home/smart_home;shutdown=true
+    type: org.apache.commons.dbcp2.BasicDataSource
+    username: root
+    password: root
+    driver-class-name: org.hsqldb.jdbc.JDBCDriver
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    generate-ddl: false
+    show-sql: true
+    database: hsql
+    database-platform: org.hibernate.dialect.HSQLDialect
+    properties:
+      hibernate:
+        format_sql: true
+logging:
+  level:
+    kr.pe.nuti: debug

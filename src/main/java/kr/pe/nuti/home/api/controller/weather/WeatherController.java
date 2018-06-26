@@ -1,5 +1,6 @@
 package kr.pe.nuti.home.api.controller.weather;
 
+import kr.pe.nuti.home.api.core.annotation.LogDetail;
 import kr.pe.nuti.home.api.domain.weather.Weather;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
