@@ -26,7 +26,7 @@ class TodoServiceStateChangeSpec extends Specification {
   def setup() {
     todoItemRepository = Mock(TodoItemRepository)
     service = Spy(TodoService)
-    service.setTodoItemRepository(todoItemRepository)
+    service.todoItemRepository = todoItemRepository
   }
 
   @See(["https://github.com/hyeonil/smart-home-api/issues/6"])
