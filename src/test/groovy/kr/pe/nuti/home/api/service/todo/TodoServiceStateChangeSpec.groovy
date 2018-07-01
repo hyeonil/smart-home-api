@@ -25,7 +25,7 @@ class TodoServiceStateChangeSpec extends Specification {
 
   def setup() {
     todoItemRepository = Mock(TodoItemRepository)
-    service = Spy(TodoService.class)
+    service = Spy(TodoService)
     service.setTodoItemRepository(todoItemRepository)
   }
 
