@@ -20,7 +20,7 @@
 
     <version.log4j>1.2.17</version.log4j>
 
-    <version.lombok>1.16.18</version.lombok>
+    <version.lombok>1.16.22</version.lombok>
 
     <version.java>1.9</version.java>
 
@@ -45,6 +45,12 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-webflux</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
     </dependency>
 
     <dependency>
@@ -121,21 +127,27 @@
     <dependency>
       <groupId>org.spockframework</groupId>
       <artifactId>spock-core</artifactId>
-      <version>1.0-groovy-2.4</version>
+      <version>1.1-groovy-2.4</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.spockframework</groupId>
+      <artifactId>spock-spring</artifactId>
+      <version>1.1-groovy-2.4</version>
       <scope>test</scope>
     </dependency>
     <!-- Overrides the Groovy version specified by spock-core-->
     <dependency>
       <groupId>org.codehaus.groovy</groupId>
       <artifactId>groovy-all</artifactId>
-      <version>2.4.4</version>
+      <version>2.4.15</version>
       <scope>test</scope>
     </dependency>
     <!-- Creates the test report -->
     <dependency>
       <groupId>com.athaydes</groupId>
       <artifactId>spock-reports</artifactId>
-      <version>1.2.9</version>
+      <version>1.6.0</version>
       <scope>test</scope>
     </dependency>
     <!-- /test -->
@@ -210,7 +222,7 @@
             <path>
               <groupId>org.projectlombok</groupId>
               <artifactId>lombok</artifactId>
-              <version>1.16.12</version>
+              <version>1.16.22</version>
             </path>
           </annotationProcessorPaths>
           <encoding>UTF-8</encoding>
@@ -231,6 +243,11 @@
             <include>**/*Test.java</include>
             <include>**/*Spec.java</include>
           </includes>
+          <argLine>
+              --add-opens java.base/java.lang=ALL-UNNAMED
+              --add-opens java.base/jdk.internal.loader=ALL-UNNAMED
+              --add-opens jdk.zipfs/jdk.nio.zipfs=ALL-UNNAMED
+          </argLine>
         </configuration>
       </plugin>
       <plugin>

@@ -22,8 +22,7 @@ public class TodoService {
   @Transactional
   @LogDetail
   public TodoItem changeState(@NonNull TodoItem todo, @NonNull TodoState state) throws IllegalStateChangeException {
-    TodoItem savedItem = todoItemRepository.findById(todo.getIdx())
-        .orElseThrow(ResourceNotFoundException::new);
+    TodoItem savedItem = this.getItem(todo.getIdx());
 
     final boolean possibleToChangeState = TodoState.isPossibleToChangeState(savedItem.getState(), state);
     if (not(possibleToChangeState)) {
@@ -33,6 +32,11 @@ public class TodoService {
     savedItem.setState(state);
 
     return todoItemRepository.save(savedItem);
+  }
+
+  public TodoItem getItem(long idx) {
+    return todoItemRepository.findById(idx)
+        .orElseThrow(ResourceNotFoundException::new);
   }
 
   @Required
