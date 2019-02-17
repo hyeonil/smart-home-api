@@ -50,27 +50,4 @@ public class ExceptionAdvice {
 
     return data.get();
   }
-
-  public static void main(String[] args) {
-    System.out.println(solution(new int[]{1,0,0,3,0,1}));
-    System.out.println(solution(new int[]{7,5,8,10,6,9,5}));
-    System.out.println(solution(new int[]{3,0,3,0,3,0}));
-  }
-
-  public static int solution(int[] paper) {
-    Arrays.sort(paper);
-    int paperLength = paper.length;
-    int upperSum = 0;
-    int resultGIndex = -1;
-    for (int i = paperLength - 1; i>= 0; i--) {
-      int gIndex = paperLength - i;
-      int count = paper[i];
-      upperSum += count;
-
-      if (upperSum >= gIndex * gIndex) {
-        resultGIndex = gIndex;
-      }
-    }
-    return resultGIndex;
-  }
 }

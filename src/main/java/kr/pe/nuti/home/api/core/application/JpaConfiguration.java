@@ -8,7 +8,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Component;
 
 @Configuration
-@EnableJpaRepositories("kr.pe.nuti.home.api.repository")
-@EntityScan("kr.pe.nuti.home.api.domain")
+@EnableJpaRepositories({
+    "kr.pe.nuti.home.api.pack.*.repository"
+})
+@EntityScan("kr.pe.nuti.home.api.pack.*.domain")
 public class JpaConfiguration {
 }

@@ -27,4 +27,17 @@ public final class JSONUtil {
 
     return jsonString;
   }
+
+  public static String objectToJsonString(Object object) {
+    final ObjectMapper objectMapper = new ObjectMapper();
+    String jsonString = null;
+
+    try {
+      jsonString = objectMapper.writeValueAsString(object);
+    } catch (JsonProcessingException e) {
+      logger.error("exception is occurred while parsing to json string", e);
+    }
+
+    return jsonString;
+  }
 }
