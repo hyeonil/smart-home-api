@@ -1,9 +1,9 @@
 package kr.pe.nuti.home.api.controller.todo;
 
-import kr.pe.nuti.home.api.domain.todo.TodoItem;
-import kr.pe.nuti.home.api.enumeration.todo.TodoState;
-import kr.pe.nuti.home.api.exception.todo.IllegalStateChangeException;
-import kr.pe.nuti.home.api.service.todo.TodoService;
+import kr.pe.nuti.home.api.pack.todo.domain.TodoItem;
+import kr.pe.nuti.home.api.pack.todo.enumeration.TodoState;
+import kr.pe.nuti.home.api.pack.todo.exception.IllegalStateChangeException;
+import kr.pe.nuti.home.api.pack.todo.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
