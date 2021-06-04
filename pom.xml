@@ -24,7 +24,7 @@
 
     <version.java>1.9</version.java>
 
-    <version.org.apache.httpcomponents>4.5.1</version.org.apache.httpcomponents>
+    <version.org.apache.httpcomponents>4.5.13</version.org.apache.httpcomponents>
 
     <version.org.aspectj>1.8.9</version.org.aspectj>
     <version.org.aspectjweaver>1.6.10</version.org.aspectjweaver>
